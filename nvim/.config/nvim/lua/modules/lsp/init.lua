@@ -19,13 +19,13 @@ nvim_lsp.pyright.setup{ on_attach = custom_on_attach, on_init = custom_on_init }
 nvim_lsp.gopls.setup{ on_attach = custom_on_attach, on_init = custom_on_init, root_dir = function() return vim.loop.cwd() end }
 nvim_lsp.clangd.setup{ on_attach = custom_on_attach, on_init = custom_on_init }
 
-local sumneko_root = os.getenv("HOME") .. "/github/lua-language-server"
-nvim_lsp.sumneko_lua.setup{ 
-  on_attach = custom_on_attach, 
+local sumneko_root = os.getenv("HOME") .. "/Workspace/lua-language-server"
+nvim_lsp.sumneko_lua.setup{
+  on_attach = custom_on_attach,
   on_init = custom_on_init,
   cmd = {
     sumneko_root
-    .. "/bin/Linux/lua-language-server", "-E",
+    .. "/bin/MacOS/lua-language-server", "-E",
     sumneko_root .. "/main.lua"
   }
 }
