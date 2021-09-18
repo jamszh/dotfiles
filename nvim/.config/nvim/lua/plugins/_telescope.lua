@@ -51,6 +51,7 @@ end
 
 M.files = function()
   require'telescope.builtin'.find_files{
+    find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
     file_ignore_patterns = {"%.png", "%.jpg", "%.webp"},
   }
 end
