@@ -1,0 +1,12 @@
+- defaults:
+  link:
+    relink: true
+
+- clean: ['~']
+
+- link:
+  ~/.config/alacritty: config/alacritty
+  ~/.tmux.conf: config/tmux/.tmux.conf
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
