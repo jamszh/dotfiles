@@ -4,6 +4,8 @@ vim.cmd('cd %:p:h')
 require('plugins._packer')
 require('plugins._lualine')
 require('plugins._nvimtree')
+require('plugins._telescope')
+require('plugins._treesitter')
 
 -- Looks
 require('modules._looks')

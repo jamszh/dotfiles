@@ -31,7 +31,7 @@ if ok then
     use {'cohama/lexima.vim', opt = false} -- autopairs brackets, braces etc
     use {'tomtom/tcomment_vim', opt = false} -- comment stuff easier
     use {'wakatime/vim-wakatime', opt = false} -- track usage time using wakatime
-    use {'nvim-treesitter/nvim-treesitter', opt = true} -- better syntax highlighting
+    use {'nvim-treesitter/nvim-treesitter', opt = false} -- better syntax highlighting
     use {'nvim-treesitter/playground', opt = true} -- playground for treesitter
     use {
       'hoob3rt/lualine.nvim',
