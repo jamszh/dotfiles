@@ -24,9 +24,9 @@ if ok then
 
   local plugins = function()
     -- Packer can manage itself as an optional plugin
-    use { 'andweeb/presence.nvim' } -- discord integration
     use { 'tjdevries/astronauta.nvim', opt = false} -- tmp
     use {'wbthomason/packer.nvim', opt = true}
+    use { 'andweeb/presence.nvim' } -- discord integration
     use {'neovim/nvim-lspconfig', opt = true} -- builtin lsp config
     use {'gruvbox-community/gruvbox', opt = false} -- nice colorscheme
     use {'cohama/lexima.vim', opt = false} -- autopairs brackets, braces etc
@@ -36,7 +36,7 @@ if ok then
     use {'nvim-treesitter/playground', opt = true} -- playground for treesitter
     use {
       'hoob3rt/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+      requires = {'kyazdani42/nvim-web-devicons', opt = true }
     }
     use {
       'hrsh7th/nvim-compe',
@@ -60,12 +60,8 @@ if ok then
     } -- super fast file tree viewer
     use {
       'akinsho/nvim-bufferline.lua',
-      -- commit = "7b9223ff",
-      -- lock = true,
-      opt = true,
-      requires = {
-        {'kyazdani42/nvim-web-devicons', opt = true}
-      }
+      tag = "*",
+      requires = { 'kyazdani42/nvim-web-devicons' }
     } -- snazzy bufferline
     use {
       'mattn/emmet-vim',
@@ -84,14 +80,13 @@ if ok then
       cmd = 'GitMessenger',
       opt = true
     } -- sort of like git blame but in floating window
-    use { 'machakann/vim-sandwich', opt = false } -- surround words with symbol
     use {
       'mhinz/vim-sayonara',
       cmd = 'Sayonara',
       opt = true
     } -- better window and buffer management
     use { 'brooth/far.vim', opt = false } -- project wide search and replace
-    use { 'tpope/vim-fugitive', opt = false } -- git helpers inside neovim
+    use {"akinsho/toggleterm.nvim"}
   end
 
   return packer.startup(plugins)

@@ -3,7 +3,6 @@ vim.cmd[[packadd nvim-tree.lua]]
 -- Set some variables
 vim.g.nvim_tree_side = 'left'
 vim.g.nvim_tree_width = 30
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ':~'
 vim.g.nvim_tree_show_icons = {
@@ -16,6 +15,7 @@ require'nvim-tree'.setup {
   open_on_setup = false,
   auto_close = false,
   open_on_tab = false,
+  tree_indent_markers = 1,
   update_focused_file = {
     enable = true
   },
