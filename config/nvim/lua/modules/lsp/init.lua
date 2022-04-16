@@ -21,13 +21,13 @@ nvim_lsp.clangd.setup{ on_attach = custom_on_attach, on_init = custom_on_init }
 nvim_lsp.tsserver.setup{ on_attach = custom_on_attach, on_init = custom_on_init }
 nvim_lsp.svelte.setup{ on_attach = custom_on_attach, on_init = custom_on_init }
 
-local sumneko_root = os.getenv("HOME") .. "/Workspace/lua-language-server"
+local sumneko_root = os.getenv("HOME") .. "/workspace/lua-language-server"
 nvim_lsp.sumneko_lua.setup{
   on_attach = custom_on_attach,
   on_init = custom_on_init,
   cmd = {
     sumneko_root
-    .. "/bin/MacOS/lua-language-server", "-E",
+    .. "/bin/Linux/lua-language-server", "-E",
     sumneko_root .. "/main.lua"
   }
 }
