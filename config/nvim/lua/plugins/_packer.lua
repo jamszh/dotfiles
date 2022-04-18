@@ -53,9 +53,9 @@ if ok then
     } -- table alignment
     use {
       'kyazdani42/nvim-tree.lua',
-      opt = true,
+      opt = false,
       requires = {
-        {'kyazdani42/nvim-web-devicons', opt = true}
+        {'kyazdani42/nvim-web-devicons', opt = false }
       },
     } -- super fast file tree viewer
     use {
