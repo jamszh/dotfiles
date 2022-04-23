@@ -1,17 +1,20 @@
 vim.opt.termguicolors = true
 
-local diagnostics_indicator = function(count, level, diagnostics_dict, context)
-  local s = " "
-  for e, n in pairs(diagnostics_dict) do
-    local sym = e == "error" and " "
-      or (e == "warning" and " " or "ⓘ" )
-    s = s .. n .. sym
-  end
-  return s
-end
-
 local numbers = function(opts)
   return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+end
+
+local filter = function(buf_number)
+  local present_type, type = pcall(function()
+    return vim.api.nvim.buf_get_var(buf_number, "term_type")
+  end)
+  if present_type then
+    if type == "vert" or type == "hori" then
+      return false
+    end
+    return true
+  end
+  return true
 end
 
 require("bufferline").setup{
@@ -19,16 +22,17 @@ require("bufferline").setup{
     mode = "buffers",
     separator_style = "thin",
     show_buffer_close_icons = false,
+    view = "multiwindow",
     show_close_icon = false,
-    -- diagnostics = "nvim_lsp",
-    -- diagnostics_indicator = diagnostics_indicator,
+    diagnostics = false,
     numbers = numbers,
+    enforce_regular_tabs = false,
+    custom_filter = filter,
     offsets = {
       {
         filetype = "NvimTree",
-        highlight = "Directory",
         text = "File Explorer",
-        text_align = "left",
+        padding = 1,
       }
     }
   },

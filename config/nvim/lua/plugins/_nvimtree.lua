@@ -1,3 +1,9 @@
+local present, nvimtree = pcall(require, "nvim-tree")
+if not present then
+  vim.notify("Cannot find nvim-tree")
+  return
+end
+
 local g = vim.g
 
 g.nvim_tree_add_trailing = 0 -- append trailing slash to folder names
@@ -23,12 +29,6 @@ g.nvim_tree_icons = {
     symlink_open = "",
   }
 }
-
-local present, nvimtree = pcall(require, "nvim-tree")
-if not present then
-  vim.notify("Cannot find nvim-tree")
-  return
-end
 
 local config = {
   disable_netrw = true,

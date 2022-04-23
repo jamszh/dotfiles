@@ -23,69 +23,115 @@ if ok then
   })
 
   local plugins = function()
-    -- Packer can manage itself as an optional plugin
-    use {'wbthomason/packer.nvim', opt = true}
-    use { 'andweeb/presence.nvim' } -- discord integration
-    use {'neovim/nvim-lspconfig', opt = true} -- builtin lsp config
-    use {'gruvbox-community/gruvbox', opt = false} -- nice colorscheme
-    use {'cohama/lexima.vim', opt = false} -- autopairs brackets, braces etc
-    use {'tomtom/tcomment_vim', opt = false} -- comment stuff easier
-    use {'wakatime/vim-wakatime', opt = false} -- track usage time using wakatime
-    use {'nvim-treesitter/nvim-treesitter', opt = false} -- better syntax highlighting
-    use {'nvim-treesitter/playground', opt = true} -- playground for treesitter
+    -- Do your own thing Packer
+    use 'wbthomason/packer.nvim'
+
+    -- das Aussehen
+    use 'ellisonleao/gruvbox.nvim'
+    use { 'kyazdani42/nvim-web-devicons' }
     use {
-      'hoob3rt/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true }
+      'goolord/alpha-nvim',
+      requires = { 'kyazdani42/nvim-web-devicons' },
+      config = function() -- use default
+        require('alpha').setup(require('alpha.themes.dashboard').config)
+      end
     }
     use {
-      'hrsh7th/nvim-compe',
-      opt = true,
+      'lukas-reineke/indent-blankline.nvim',
+      config = function() -- use default
+        require('indent_blankline').setup()
+      end
+    }
+
+    ----- LSP -----
+    use 'neovim/nvim-lspconfig' -- builtin LSP config
+    -- TODO
+    -- use { -- LSP installer
+    --   'williamboman/nvim-lsp-installer',
+    --   config = [[ require('plugins/nvim-lsp-installer') ]],
+    --   opt = true
+    -- }
+
+    -- Syntax Highlighting
+    use {
+      'nvim-treesitter/nvim-treesitter',
       requires = {
-        {'hrsh7th/vim-vsnip'}, -- integration with vim-vsnip
-        {'hrsh7th/vim-vsnip-integ'} -- integration with vim-vsnip
+        'nvim-treesitter/playground',
+        opt = true
       },
-    } -- completion framework
-    use {
-      'dhruvasagar/vim-table-mode',
-      ft = {'txt', 'markdown'},
-      opt = true,
-    } -- table alignment
-    use {
+      run = ':TSUpdate',
+      config = [[ require('plugins/_treesitter') ]]
+    }
+
+    ----- IDE Features -----
+    use { -- file explorer
       'kyazdani42/nvim-tree.lua',
-      opt = false,
+      config = [[ require('plugins/_nvimtree') ]]
+    }
+
+    use { -- comments made easier
+      'numToStr/Comment.nvim',
+      config = [[ require('plugins/_comment') ]]
+    }
+
+    use { -- Auto completion
+      'hrsh7th/nvim-cmp',
       requires = {
-        {'kyazdani42/nvim-web-devicons', opt = false }
+        'hrsh7th/cmp-nvim-lsp',
+        { 'hrsh7th/cmp-nvim-lua', ft = 'lua' },
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'saadparwaiz1/cmp_luasnip',
       },
-    } -- super fast file tree viewer
-    use {
-      'akinsho/nvim-bufferline.lua',
-      tag = "*",
-      requires = { 'kyazdani42/nvim-web-devicons' }
-    } -- snazzy bufferline
-    use {
-      'mattn/emmet-vim',
-      cmd = 'EmmetInstall',
-      opt = true
-    } -- less typing for html code
-    use {
+      config = [[ require('plugins/_cmp') ]]
+    }
+
+    use { -- Snippet Engine
+      'L3MON4D3/LuaSnip',
+      requires = {
+        'rafamadriz/friendly-snippets',
+      },
+      config = [[ require('plugins/_luasnip') ]]
+    }
+
+    use { -- Find, Filter, Preview, Pick
       'nvim-telescope/telescope.nvim',
       requires = {
-        {'nvim-lua/popup.nvim'},
-        {'nvim-lua/plenary.nvim'},
+        { 'nvim-lua/popup.nvim' },
+        { 'nvim-lua/plenary.nvim' },
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+        { 'nvim-telescope/telescope-file-browser.nvim' },
+        { 'nvim-telescope/telescope-media-files.nvim' },
       },
-    } -- extensible fuzzy finder
+      config = [[ require('plugins/_telescope') ]]
+    }
+
+    use { -- Pictograms for completion topics
+      'onsails/lspkind-nvim',
+      config = [[ require('plugins/_lspkind') ]]
+    }
+
+    use { -- status line
+      'feline-nvim/feline.nvim',
+      config = [[ require('plugins/_feline') ]]
+    }
+
+    use { -- bufferline
+      'akinsho/nvim-bufferline.lua',
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = [[ require('plugins/_bufferline') ]]
+    }
+
+    ----- Misc -----
+    use { 'andweeb/presence.nvim', opt = true } -- discord integration
+    use { 'wakatime/vim-wakatime', opt = true } -- track usage time using wakatime
+
     use {
       'rhysd/git-messenger.vim',
       cmd = 'GitMessenger',
       opt = true
     } -- sort of like git blame but in floating window
-    use {
-      'mhinz/vim-sayonara',
-      cmd = 'Sayonara',
-      opt = true
-    } -- better window and buffer management
-    use { 'brooth/far.vim', opt = false } -- project wide search and replace
-    use {"akinsho/toggleterm.nvim"}
+    use {"akinsho/toggleterm.nvim", opt = true }
   end
 
   return packer.startup(plugins)
