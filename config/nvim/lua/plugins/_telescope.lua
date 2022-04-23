@@ -54,7 +54,7 @@ require('telescope').setup{
 M.grep_prompt = function()
   require'telescope.builtin'.grep_string{
     shorten_path = true,
-    search = vim.fn.input("Grep String > ")
+    search = vim.fn.input("  ")
   }
 end
 
