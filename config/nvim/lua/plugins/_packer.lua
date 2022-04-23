@@ -24,7 +24,6 @@ if ok then
 
   local plugins = function()
     -- Packer can manage itself as an optional plugin
-    use { 'tjdevries/astronauta.nvim', opt = false} -- tmp
     use {'wbthomason/packer.nvim', opt = true}
     use { 'andweeb/presence.nvim' } -- discord integration
     use {'neovim/nvim-lspconfig', opt = true} -- builtin lsp config
