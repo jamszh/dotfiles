@@ -67,4 +67,7 @@ local config = {
   }
 }
 
+-- Mappings
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
+
 nvimtree.setup(config)

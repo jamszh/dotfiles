@@ -1,8 +1,9 @@
 local previewers = require('telescope.previewers')
+local telescope = require('telescope')
 
 local M = {}
 
-require('telescope').setup{
+telescope.setup{
   defaults = {
     vimgrep_arguments = {
       'rg',
@@ -51,18 +52,15 @@ require('telescope').setup{
   }
 }
 
-M.grep_prompt = function()
-  require'telescope.builtin'.grep_string{
-    shorten_path = true,
-    search = vim.fn.input("  ")
+M.files = function()
+  telescope.builtin.find_files{
+    find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+    file_ignore_patterns = {"%.webp"},
   }
 end
 
-M.files = function()
-  require'telescope.builtin'.find_files{
-    find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-    file_ignore_patterns = {"%.png", "%.jpg", "%.webp"},
-  }
-end
+-- Mappings
+vim.keymap.set('n', '<C-p>', ':Telescope find_files <cr>', { silent = true })
+vim.keymap.set('n', '<C-f>', ':Telescope live_grep <cr>', { silent = true})
 
 return M
