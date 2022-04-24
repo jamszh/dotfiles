@@ -62,5 +62,6 @@ end
 -- Mappings
 vim.keymap.set('n', '<C-p>', ':Telescope find_files <cr>', { silent = true })
 vim.keymap.set('n', '<C-f>', ':Telescope live_grep <cr>', { silent = true})
+vim.keymap.set('n', 'gr',    ':Telescope lsp_references<cr>', { noremap = true, silent = false })
 
 return M
