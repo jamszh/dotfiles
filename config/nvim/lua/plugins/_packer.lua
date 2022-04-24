@@ -45,12 +45,10 @@ if ok then
 
     ----- LSP -----
     use 'neovim/nvim-lspconfig' -- builtin LSP config
-    -- TODO
-    -- use { -- LSP installer
-    --   'williamboman/nvim-lsp-installer',
-    --   config = [[ require('plugins/nvim-lsp-installer') ]],
-    --   opt = true
-    -- }
+    use { -- LSP installer
+      'williamboman/nvim-lsp-installer',
+      config = [[ require('plugins/_lsp_installer') ]],
+    }
 
     -- Syntax Highlighting
     use {
