@@ -5,6 +5,8 @@ local M = {}
 
 telescope.setup{
   defaults = {
+
+    -- Search Config
     vimgrep_arguments = {
       'rg',
       '--color=never',
@@ -20,6 +22,16 @@ telescope.setup{
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
+    file_ignore_patterns = {},
+    shorten_path = true,
+    file_previewer = previewers.vim_buffer_cat.new,
+    grep_previewer = previewers.vim_buffer_vimgrep.new,
+    qflist_previewer = previewers.vim_buffer_qflist.new,
+
+    -- Developer configurations: Not meant for general override
+    buffer_previewer_maker = previewers.buffer_previewer_maker,
+
+    -- Layout & UI
     layout_config = {
       horizontal = {
         prompt_position = "top",
@@ -33,22 +45,12 @@ telescope.setup{
       height = 0.80,
       preview_cutoff = 120,
     },
-    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
-    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    shorten_path = true,
     winblend = 0,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
     color_devicons = true,
     use_less = true,
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
-    file_previewer = previewers.vim_buffer_cat.new,
-    grep_previewer = previewers.vim_buffer_vimgrep.new,
-    qflist_previewer = previewers.vim_buffer_qflist.new,
-
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = previewers.buffer_previewer_maker
   }
 }
 
