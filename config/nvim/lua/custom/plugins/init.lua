@@ -1,5 +1,3 @@
 return {
-  {
-    'williamboman/nvim-lsp-installer',
-  }
+  { 'williamboman/nvim-lsp-installer' },
 }

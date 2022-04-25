@@ -1,6 +1,6 @@
 local bufferline = require("custom.plugins.bufferline")
 local lsp = require("custom.plugins.lsp")
--- local comment = require("custom.plugins.comment")
+local user_plugins = require("custom.plugins")
 local M = {}
 
 M.ui = {
@@ -8,6 +8,7 @@ M.ui = {
 }
 
 M.plugins = {
+  install = user_plugins,
   -- LSP
   options = {
     lspconfig = {
@@ -24,7 +25,6 @@ M.plugins = {
 M.mappings = {
   plugins = {
     lspconfig = lsp.mappings,
-    -- comment = comment.mappings,
   }
 }
 
