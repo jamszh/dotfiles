@@ -14,7 +14,10 @@ M.setup_lsp = function(attach, capabilities)
   })
 
   lsp_installer.on_server_ready(function (server)
-    local opts = {}
+    local opts = {
+      on_attach = attach,
+      capabilities = capabilities,
+    }
 
     if server.name == "sumneko_lua" then
       opts.settings = {
