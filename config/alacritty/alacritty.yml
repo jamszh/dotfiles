@@ -1,13 +1,13 @@
 font:
  normal:
    family: Iosevka Nerd Font Mono
-   style: Light
+   style: Extralight
  bold:
    family: Iosevka Nerd Font Mono
-   style: Regular
+   style: Light
  italic:
    family: Iosevka Nerd Font Mono
-   style: Italic
+   style: Light Italic
  size: 16
 
 window:
