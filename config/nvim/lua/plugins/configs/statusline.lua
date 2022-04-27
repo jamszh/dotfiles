@@ -382,6 +382,13 @@ default.current_line = {
    },
 }
 
+default.position = {
+  provider = 'position',
+  left_sep = ' ',
+  right_sep = ' ',
+  hl = { fg = default.colors.grey_fg2, bg = default.colors.statusline_bg },
+}
+
 local function add_table(a, b)
    table.insert(a, b)
 end
@@ -412,6 +419,7 @@ M.setup = function(override_flag)
 
    -- right
    add_table(default.right, default.lsp_icon)
+   add_table(default.right, default.position)
    add_table(default.right, default.git_branch)
    add_table(default.right, default.empty_space)
    add_table(default.right, default.empty_spaceColored)
