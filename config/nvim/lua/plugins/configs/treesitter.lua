@@ -13,6 +13,10 @@ local default = {
       enable = true,
       use_languagetree = true,
    },
+   indent = {
+     enable = true,
+     disable = { "go", "python" }
+   }
 }
 
 local M = {}
