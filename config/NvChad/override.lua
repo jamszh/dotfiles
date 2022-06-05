@@ -1,3 +1,4 @@
+local feline = require("custom.plugins.feline")
 local M = {}
 
 M.treesitter = {
@@ -26,6 +27,11 @@ M.nvimtree = {
       show = { git = true },
     },
   },
+  view = {
+    side = "left",
+    width = 40,
+  }
 }
 
+M.feline = feline
 return M
