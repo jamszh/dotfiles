@@ -2,7 +2,7 @@
 
 - link:
     ~/.config/alacritty: config/alacritty
-    ~/.tmux.conf: config/tmux/.tmux.conf
+    ~/.tmux.conf: config/tmux
     ~/.config/nvim/lua/custom: config/NvChad
 
 - shell:
