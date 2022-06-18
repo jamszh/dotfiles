@@ -1,4 +1,4 @@
-local feline = require("custom.plugins.feline")
+-- local statusline = require("custom.plugins.statusline")
 local M = {}
 
 M.treesitter = {
@@ -33,5 +33,5 @@ M.nvimtree = {
   }
 }
 
-M.feline = feline
+-- M.statusline = statusline
 return M
