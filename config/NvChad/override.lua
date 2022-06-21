@@ -36,5 +36,12 @@ M.nvimtree = {
   }
 }
 
+M.nvterm = {
+  behavior = {
+     close_on_exit = true,
+     auto_insert = false,
+  },
+}
+
 -- M.statusline = statusline
 return M
