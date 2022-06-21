@@ -2,6 +2,9 @@
 local M = {}
 
 M.treesitter = {
+  indent = {
+    enable = true
+  },
   ensure_installed = {
     "lua",
     "vim",
