@@ -7,6 +7,8 @@ set -g @plugin "arcticicestudio/nord-tmux"
 # set -g @continuum-boot 'on'
 # set -g @continuum-boot-options 'alacritty,fullscreen'
 
+set -g status-left-length 100
+
 # WSL
 set -g default-terminal "tmux-256color"
 
