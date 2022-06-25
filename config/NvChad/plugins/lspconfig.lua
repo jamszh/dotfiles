@@ -13,6 +13,7 @@ M.setup_lsp = function(attach, capabilities)
      "pyright",
      "gopls",
      "svelte",
+     "rust_analyzer",
    }
 
    for _, lsp in ipairs(servers) do
