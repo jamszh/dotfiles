@@ -1,0 +1,4 @@
+# After Dotbot installation
+# Copy this into ~/.zsh/tokens
+
+export NPM_TOKEN="your_token"

@@ -1,0 +1,41 @@
+# Directory FZF Navigator
+usage() { echo "Usage: dirfinde [-e]"; return }
+
+dirfinde () {
+  local opt
+  local OPTIND
+  while getopts "he" opt; do
+    case $opt in
+      h)
+        usage
+        return 0
+        ;;
+      e)
+        e=true
+        ;;
+      \?)
+        usage
+        return 1
+        ;;
+    esac
+  done
+
+  local selection=$(find ~/workspace -maxdepth 1 -type d | \
+    fzf --height 40% \
+        --delimiter / --with-nth -1 \
+        --border \
+        --reverse \
+        --preview 'inspect {}')
+
+  if [[ $OPTIND -eq 1 ]]
+  then
+    cd $selection
+  fi
+
+  if [[ $e ]]
+  then
+    echo $selection
+  fi
+}
+
+dirfinde "$@"

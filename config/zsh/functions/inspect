@@ -1,0 +1,13 @@
+# Inspect 
+
+inspect () {
+  if [ -d $1 ]; then
+    echo "Directory TODO"
+    return
+  fi
+
+  if [ -f $1 ]; then
+    echo "File TODO"
+    return
+  fi
+}

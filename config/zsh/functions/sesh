@@ -1,0 +1,10 @@
+# Initialise a clean Tmux session - 'sesh'
+sesh () {
+  selection=$(dirfinde -e)
+
+  if [[ ! -z "${selection// }" ]]
+  then
+    session_title=$(basename $selection)
+    tmux new-session -s $session_title -c $selection 
+  fi
+}

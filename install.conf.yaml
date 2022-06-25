@@ -1,9 +1,15 @@
-- clean: ['~']
+- create:
+  - ~/.zsh
 
 - link:
     ~/.config/alacritty: config/alacritty
     ~/.tmux.conf: config/tmux
     ~/.config/nvim/lua/custom: config/NvChad
+
+    ~/.zsh/functions: config/zsh/functions 
+    ~/.zsh/aliases: config/zsh/aliases
+    ~/.zshrc: config/zsh/zshrc
+    ~/.zshenv: config/zsh/zshenv
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

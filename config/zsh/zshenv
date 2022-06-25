@@ -1,0 +1,6 @@
+. "$HOME/.cargo/env"
+export PATH=$PATH:/usr/local/go/bin
+
+# Required for FZF
+fpath=(~/.zsh/functions $fpath)
+autoload ${fpath[1]}/*(:t)
