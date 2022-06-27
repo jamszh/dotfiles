@@ -1,5 +1,6 @@
 . "$HOME/.cargo/env"
 export PATH=$PATH:/usr/local/go/bin
+export NVM_DIR="$HOME/.nvm"
 
 # Required for FZF
 fpath=(~/.zsh/functions $fpath)
