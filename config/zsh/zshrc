@@ -1,6 +1,9 @@
 [ -f ~/.zsh/aliases ] && source ~/.zsh/aliases
+[ -f ~/.zsh/bindings ] && source ~/.zsh/bindings
 [ -f ~/.zsh/tokens ] && source ~/.zsh/tokens
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# UI theme
 [ -f ~/.zsh/themes/p10k.zsh ] && source ~/.zsh/themes/p10k.zsh
 [ -f ~/.zsh/themes/p10k.zsh ] && source ~/themes/powerlevel10k/powerlevel10k.zsh-theme
 

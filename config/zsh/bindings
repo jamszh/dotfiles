@@ -1,0 +1,4 @@
+# 2 Nature, 3 Earth, 3 Water
+
+# See functions/sesh
+bindkey -s ^f "sesh\n"

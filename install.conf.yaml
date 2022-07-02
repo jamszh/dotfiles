@@ -12,6 +12,7 @@
 
     ~/.zsh/functions: config/zsh/functions 
     ~/.zsh/aliases: config/zsh/aliases
+    ~/.zsh/bindings: config/zsh/bindings
     ~/.zsh/themes: config/zsh/themes
     ~/.zshrc: config/zsh/zshrc
     ~/.zshenv: config/zsh/zshenv
