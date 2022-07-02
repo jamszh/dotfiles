@@ -3,11 +3,11 @@
 inspect () {
   if [ -d $1 ]; then
     echo "Directory TODO"
-    return
+    return 0
   fi
 
   if [ -f $1 ]; then
     echo "File TODO"
-    return
+    return 0
   fi
 }

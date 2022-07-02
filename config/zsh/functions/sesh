@@ -2,22 +2,19 @@
 sesh () {
   selection=$(dirfinde -e $ZSH_WORK_DIRS)
 
-  if [[ -z "${selection// }" ]]
-  then
+  if [[ -z "${selection// }" ]]; then
     return 0
   fi
 
   session_title=$(basename $selection)
   tmux_running=$(pgrep tmux)
 
-  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]
-  then
+  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $session_title -c $selection
     exit 0
   fi
 
-  if ! tmux has-session -t=$session_title 2> /dev/null
-  then
+  if ! tmux has-session -t=$session_title 2> /dev/null; then
     tmux new-session -ds $session_title -c $selection
   fi
 
