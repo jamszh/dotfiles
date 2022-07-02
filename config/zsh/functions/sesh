@@ -2,9 +2,24 @@
 sesh () {
   selection=$(dirfinde -e)
 
-  if [[ ! -z "${selection// }" ]]
+  if [[ -z "${selection// }" ]]
   then
-    session_title=$(basename $selection)
-    tmux new-session -s $session_title -c $selection 
+    exit 0
   fi
+
+  session_title=$(basename $selection)
+  tmux_running=$(pgrep tmux)
+
+  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]
+  then
+    tmux new-session -s $session_title -c $selection
+    exit 0
+  fi
+
+  if ! tmux has-session -t=$session_title 2> /dev/null
+  then
+    tmux new-session -ds $session_title -c $selection
+  fi
+
+  tmux switch-client -t $session_title
 }
