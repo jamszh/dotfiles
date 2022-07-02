@@ -1,10 +1,10 @@
 # Initialise a clean Tmux session - 'sesh'
 sesh () {
-  selection=$(dirfinde -e)
+  selection=$(dirfinde -e $ZSH_WORK_DIRS)
 
   if [[ -z "${selection// }" ]]
   then
-    exit 0
+    return 0
   fi
 
   session_title=$(basename $selection)

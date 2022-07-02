@@ -1,5 +1,5 @@
 # Directory FZF Navigator
-usage() { echo "Usage: dirfinde [-e]"; return }
+usage() { echo "Usage: dirfinde [-e echo] dirA dirB ..."; return }
 
 dirfinde () {
   local opt
@@ -19,23 +19,26 @@ dirfinde () {
         ;;
     esac
   done
+  shift $(( OPTIND - 1 ))
 
-  local selection=$(find ~/workspace -maxdepth 1 -type d | \
+  if [ $# -eq 0 ]; then
+    usage
+    return 1
+  fi
+
+  local selection=$(find $@ -mindepth 1 -maxdepth 1 -type d | \
     fzf --height 40% \
         --delimiter / --with-nth -1 \
         --border \
         --reverse \
         --preview 'inspect {}')
 
-  if [[ $OPTIND -eq 1 ]]
-  then
-    cd $selection
+  if [[ $e ]]; then
+    echo $selection
+    return 0
   fi
 
-  if [[ $e ]]
-  then
-    echo $selection
-  fi
+  cd $selection
 }
 
 dirfinde "$@"
