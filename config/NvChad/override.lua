@@ -1,4 +1,4 @@
--- local statusline = require("custom.plugins.statusline")
+local statusline = require("custom.plugins.statusline")
 local M = {}
 
 M.treesitter = {
@@ -43,5 +43,5 @@ M.nvterm = {
   },
 }
 
--- M.statusline = statusline
+M.statusline = statusline
 return M

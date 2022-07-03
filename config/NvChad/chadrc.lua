@@ -4,16 +4,13 @@ local M = {}
 
 M.ui = {
   theme = "gruvchad",
+  statusline = override.statusline,
 }
 
 M.plugins = {
   options = {
     lspconfig = {
       setup_lspconf = "custom.plugins.lspconfig",
-    },
-    statusline = {
-       separator_style = "block", -- default/round/block/arrow
-       config = "%!v:lua.require'custom.plugins.statusline'.run()",
     },
   },
   override = {

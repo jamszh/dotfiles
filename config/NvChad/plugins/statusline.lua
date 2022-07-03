@@ -23,7 +23,7 @@ local sep_style = {
    },
 }
 
-local user_sep_style = require("core.utils").load_config().plugins.options.statusline.separator_style
+local user_sep_style = "block"
 local sep_l = sep_style[user_sep_style]["left"]
 local sep_r = sep_style[user_sep_style]["right"]
 
@@ -56,6 +56,9 @@ local modes = {
 }
 
 local M = {}
+
+M.separator_style = "block"
+M.config = "%!v:lua.require'custom.plugins.statusline'.run()"
 
 M.mode = function()
    local m = vim.api.nvim_get_mode().mode
