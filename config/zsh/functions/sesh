@@ -1,4 +1,13 @@
 # Initialise a clean Tmux session - 'sesh'
+init () {
+  if command -v lazygit &> /dev/null; then
+    tmux new-session -ds $session_title -c $selection "lazygit"
+    tmux new-window -t $session_title -c $selection
+  else
+    tmux new-session -ds $session_title -c $selection
+  fi
+}
+
 sesh () {
   selection=$(dirfinde -e $ZSH_WORK_DIRS)
 
@@ -11,11 +20,12 @@ sesh () {
 
   if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $session_title -c $selection
+    init
     exit 0
   fi
 
   if ! tmux has-session -t=$session_title 2> /dev/null; then
-    tmux new-session -ds $session_title -c $selection
+    init
   fi
 
   tmux switch-client -t $session_title
