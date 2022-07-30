@@ -1,4 +1,3 @@
-local statusline = require("custom.plugins.statusline")
 local M = {}
 
 M.treesitter = {
@@ -43,5 +42,52 @@ M.nvterm = {
   },
 }
 
-M.statusline = statusline
+M.mason = {
+  ensure_installed = {
+    "lua-language-server",
+    "html",
+    "cssls",
+    "bashls",
+    "emmet_ls",
+    "tsserver",
+    "clangd",
+    "pyright",
+    "gopls",
+    "svelte",
+    "rust_analyzer",
+  },
+}
+
+-- M.lspconfig = {
+--   config = function()
+--     require "plugins.configs.lspconfig"
+--     require "custom.plugins.lspconfig"
+--   end,
+-- }
+
+M.ui = {
+  statusline = {
+    separator_style = "block",
+    overriden_modules = function()
+      return require("custom.plugins.statusline")
+    end,
+  }
+}
+
+M.alpha = {
+  header = {
+    val = {
+      "           ▄ ▄                   ",
+      "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+      "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+      "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+      "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+      "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄ ",
+      "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █ ",
+      "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █ ",
+      "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█     ",
+    },
+  },
+}
+
 return M
