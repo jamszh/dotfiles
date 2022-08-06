@@ -1,5 +1,3 @@
-local st_modules = require "nvchad_ui.statusline.modules"
-
 return {
   cwd = function()
     return ""
@@ -9,7 +7,7 @@ return {
     if rawget(vim, "lsp") then
       for _, client in ipairs(vim.lsp.get_active_clients()) do
         if client.attached_buffers[vim.api.nvim_get_current_buf()] then
-          return (vim.o.columns > 100 and "%#St_LspStatus#" .. " [" .. client.name .. "] ") or "  "
+          return (vim.o.columns > 100 and "%#St_LspStatus#" .. " [" .. client.name .. "]  ") or "  "
         end
       end
     end
