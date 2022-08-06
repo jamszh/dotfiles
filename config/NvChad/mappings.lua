@@ -22,8 +22,18 @@ M.disabled = {
 
 M.tabufline = {
   n = {
-    ["<C-k>"] = { "<cmd> Tbufnext <CR>", "  goto next buffer" },
-    ["<C-j>"] = { "<cmd> Tbufprev <CR> ", "  goto prev buffer" },
+    ["<C-k>"] = {
+      function()
+        require("core.utils").tabuflineNext()
+      end,
+      "  goto next buffer"
+    },
+    ["<C-j>"] = {
+      function()
+        require("core.utils").tabuflinePrev()
+      end,
+      "  goto prev buffer"
+    },
   }
 }
 
