@@ -6,16 +6,24 @@ M.disabled = {
     ["gr"] = "",
     ["<C-h>"] = "",
     ["<C-l>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
+    ["<C-s>"] = "",
     ["<A-i>"] = "",
     ["<A-v>"] = "",
     ["<A-h>"] = "",
+    ["<TAB>"] = "",
+    ["<S-Tab>"] = "",
   },
   t = {
     ["<A-i>"] = "",
     ["<A-v>"] = "",
     ["<A-h>"] = "",
+  }
+}
+
+M.tabufline = {
+  n = {
+    ["<C-k>"] = { "<cmd> Tbufnext <CR>", "  goto next buffer" },
+    ["<C-j>"] = { "<cmd> Tbufprev <CR> ", "  goto prev buffer" },
   }
 }
 
