@@ -16,6 +16,7 @@ M.plugins = {
     ["neovim/nvim-lspconfig"] = override.lspconfig,
     ["NvChad/ui"] = override.ui,
     ["goolord/alpha-nvim"] = override.alpha,
+    ["nvim-telescope/telescope.nvim"] = override.telescope,
   },
   user = require("custom.plugins")
 }

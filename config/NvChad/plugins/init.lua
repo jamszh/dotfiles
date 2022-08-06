@@ -5,6 +5,9 @@ return {
     disable = false,
     cmd = "Alpha"
   },
+  ["nvim-telescope/telescope.nvim"] = {
+    module = "telescope",
+  },
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"

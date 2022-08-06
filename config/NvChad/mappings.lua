@@ -33,6 +33,7 @@ M.telescope = {
     ["<C-f>"] = { "<cmd> Telescope live_grep <CR>", "   live grep" },
     ["gd"]    = { "<cmd> Telescope lsp_definitions <CR>", " " },
     ["gr"]    = { "<cmd> Telescope lsp_references<CR>", " " },
+    ["gs"]    = { "<cmd> Telescope grep_string<CR>", "cursor grep string" },
   }
 }
 

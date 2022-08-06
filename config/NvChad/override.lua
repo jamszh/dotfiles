@@ -58,12 +58,25 @@ M.mason = {
   },
 }
 
--- M.lspconfig = {
---   config = function()
---     require "plugins.configs.lspconfig"
---     require "custom.plugins.lspconfig"
---   end,
--- }
+M.telescope = function()
+  return {
+    defaults = {
+      mappings = {
+        n = {
+          ["q"] = require("telescope.actions").close,
+          ["d"] = require("telescope.actions").delete_buffer,
+        }
+      }
+    }
+  }
+end
+
+M.lspconfig = {
+  config = function()
+    require "plugins.configs.lspconfig"
+    require "custom.plugins.lspconfig"
+  end,
+}
 
 M.ui = {
   statusline = {
