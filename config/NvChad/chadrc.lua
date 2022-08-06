@@ -18,6 +18,9 @@ M.plugins = {
     ["goolord/alpha-nvim"] = override.alpha,
     ["nvim-telescope/telescope.nvim"] = override.telescope,
   },
+  status = {
+    alpha = true,
+  },
   user = require("custom.plugins")
 }
 
