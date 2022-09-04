@@ -17,6 +17,7 @@ M.plugins = {
     ["NvChad/ui"] = override.ui,
     ["goolord/alpha-nvim"] = override.alpha,
     ["nvim-telescope/telescope.nvim"] = override.telescope,
+    ["lewis6991/gitsigns.nvim"] = override.gitsigns,
   },
   status = {
     alpha = true,

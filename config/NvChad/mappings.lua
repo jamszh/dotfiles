@@ -20,6 +20,12 @@ M.disabled = {
   }
 }
 
+M.gitsigns = {
+  n = {
+    ["<leader>bl"] = { "<cmd> Gitsigns blame_line <CR>", "git blame line" }
+  }
+}
+
 M.tabufline = {
   n = {
     ["<C-k>"] = {
