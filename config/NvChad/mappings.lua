@@ -30,13 +30,13 @@ M.tabufline = {
   n = {
     ["<C-k>"] = {
       function()
-        require("core.utils").tabuflineNext()
+        require("nvchad_ui.tabufline").tabuflineNext()
       end,
       "  goto next buffer"
     },
     ["<C-j>"] = {
       function()
-        require("core.utils").tabuflinePrev()
+        require("nvchad_ui.tabufline").tabuflinePrev()
       end,
       "  goto prev buffer"
     },
