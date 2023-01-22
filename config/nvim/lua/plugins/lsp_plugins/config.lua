@@ -9,16 +9,6 @@ local servers = {
   gopls = {},
   svelte = {},
   rust_analyzer = {},
- -- "html",
- -- "cssls",
- -- "bashls",
- -- "emmet_ls",
- -- "tsserver",
- -- "clangd",
- -- "pyright",
- -- "gopls",
- -- "svelte",
- -- "rust_analyzer",
 }
 
 local config = {
