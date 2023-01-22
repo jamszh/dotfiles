@@ -22,7 +22,7 @@ local config = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   event = "BufReadPost",
-  opts ={
+  opts = {
     sync_install = false,
     highlight = { enable = true },
     indent = { enable = true },
