@@ -47,7 +47,6 @@ local keys = {
   { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
   { "<leader>sw", grep_wrap("grep_string"), desc = "Word (root dir)" },
   { "<leader>sW", grep_wrap("grep_string", { cwd = false }), desc = "Word (cwd)" },
-  { "<leader>uC", grep_wrap("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
   {
     "<leader>ss",
     grep_wrap("lsp_document_symbols", {
