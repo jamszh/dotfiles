@@ -39,7 +39,7 @@ local config = function()
   }
 end
 
-local config = {
+local plugin = {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
@@ -51,4 +51,4 @@ local config = {
   opts = config
 }
 
-return { config }
+return { plugin }
