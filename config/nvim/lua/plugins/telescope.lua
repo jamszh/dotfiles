@@ -1,6 +1,6 @@
 local path = require("lib.path")
 
-function grep_wrap(builtin, opts)
+local function grep_wrap(builtin, opts)
   local params = { builtin = builtin, opts = opts }
   return function()
     builtin = params.builtin
