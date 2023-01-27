@@ -9,6 +9,13 @@ local servers = {
   gopls = {},
   svelte = {},
   rust_analyzer = {},
+  sumneko_lua = {
+    Lua = {
+      completion = {
+        callSnippet = "Replace"
+      }
+    }
+  }
 }
 
 local config = {
