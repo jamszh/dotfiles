@@ -9,21 +9,28 @@ local servers = {
   gopls = {},
   svelte = {},
   rust_analyzer = {},
+  sumneko_lua = {
+    Lua = {
+      completion = {
+        callSnippet = "Replace"
+      }
+    }
+  }
 }
 
 local config = {
   "neovim/nvim-lspconfig",
   event = "BufReadPre",
-  opts = {
-    servers = servers,
-    setup = {},
-  },
   dependencies = {
-    { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-    { "folke/neodev.nvim" },
+    "folke/neoconf.nvim",
+    "folke/neodev.nvim",
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
+  },
+  opts = {
+    servers = servers,
+    setup = {},
   },
   config = function(_, opts)
     servers = opts.servers
