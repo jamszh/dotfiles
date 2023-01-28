@@ -8,3 +8,5 @@ function M.opts(name)
   local Plugin = require("lazy.core.plugin")
   return Plugin.values(plugin, "opts", false)
 end
+
+return M

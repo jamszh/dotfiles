@@ -1,4 +1,4 @@
-local config = {
+local plugin = {
   "nvim-neo-tree/neo-tree.nvim",
   cmd = "Neotree",
   dependencies = {
@@ -26,4 +26,4 @@ local config = {
   }
 }
 
-return { config }
+return { plugin }
