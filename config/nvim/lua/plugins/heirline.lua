@@ -10,8 +10,12 @@ local plugin = {
     local colors = require("tokyonight.colors").setup()
     require("heirline").load_colors(colors)
     local setup_config = {
-      statusline = { heirline.mode_indicator, heirline.build_file_block() },
-      winbar = {},
+      statusline = {
+        heirline.build_statuslines()
+      },
+      winbar = {
+        heirline.build_file_block(),
+      },
       tabline = {},
       status_column = {},
     }
