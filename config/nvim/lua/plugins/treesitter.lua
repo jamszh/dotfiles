@@ -18,7 +18,7 @@ local installed_grammar_list = {
   "markdown_inline",
 }
 
-local config = {
+local plugin = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   event = "BufReadPost",
@@ -28,7 +28,10 @@ local config = {
     indent = { enable = true },
     context_commentstring = { enable = true, enable_autocmd = false },
     ensure_installed = installed_grammar_list,
-  }
+  },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+  end
 }
 
-return { config }
+return { plugin }
