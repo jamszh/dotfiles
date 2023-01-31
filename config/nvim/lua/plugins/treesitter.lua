@@ -1,24 +1,28 @@
 local installed_grammar_list = {
-  "lua",
-  "vim",
-  "typescript",
-  "javascript",
-  "python",
-  "go",
+  "bash",
   "dockerfile",
+  "go",
+  "help",
+  "html",
+  "javascript",
+  "lua",
+  "python",
+  "json",
   "jsonc",
   "jsdoc",
+  "markdown",
+  "markdown_inline",
   "prisma",
   "svelte",
   "scss",
   "tsx",
+  "typescript",
   "regex",
-  "bash",
-  "markdown",
-  "markdown_inline",
+  "vim",
+  "yaml",
 }
 
-local config = {
+local plugin = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   event = "BufReadPost",
@@ -28,7 +32,10 @@ local config = {
     indent = { enable = true },
     context_commentstring = { enable = true, enable_autocmd = false },
     ensure_installed = installed_grammar_list,
-  }
+  },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+  end
 }
 
-return { config }
+return { plugin }
