@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.opt.laststatus = 3
 
 local opt = vim.opt
 
