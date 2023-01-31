@@ -130,13 +130,6 @@ local scroll_bar = {
 M.build_statuslines = function()
   local conditions = require("heirline.conditions")
   local DEFAULT_STATUS_LINE = { space, mode_indicator, align, ruler, space, scroll_bar }
-  local INACTIVE_STATUS_LINE = { condition = conditions.is_not_active, align, file_name, align }
-  local SPECIAL_STATUS_LINE = {
-    condition = function()
-      return conditions.buffer_matches({ filetype = { "neo-tree" }})
-    end,
-    file_name
-  }
 
   local result = {
     hl = function()
@@ -149,7 +142,7 @@ M.build_statuslines = function()
 
     fallthrough = false,
 
-    SPECIAL_STATUS_LINE, INACTIVE_STATUS_LINE, DEFAULT_STATUS_LINE
+    DEFAULT_STATUS_LINE
   }
 
   return result
