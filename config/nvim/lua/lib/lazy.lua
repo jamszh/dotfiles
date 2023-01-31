@@ -9,4 +9,8 @@ function M.opts(name)
   return Plugin.values(plugin, "opts", false)
 end
 
+function M.has(plugin_name)
+  return require("lazy.core.config").plugins[plugin_name] ~= nil
+end
+
 return M
