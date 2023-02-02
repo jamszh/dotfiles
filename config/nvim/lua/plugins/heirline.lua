@@ -7,7 +7,7 @@ local plugin = {
     "nvim-tree/nvim-web-devicons"
   },
   config = function()
-    local colors = require("tokyonight.colors").setup()
+    local colors = require("catppuccin.palettes").get_palette "mocha"
     require("heirline").load_colors(colors)
     local setup_config = {
       statusline = {

@@ -124,7 +124,6 @@ local scroll_bar = {
     local idx = math.floor((curr_line - 1) / lines * #self.sbar) + 1
     return string.rep(self.sbar[idx], 2)
   end,
-  hl = { fg = "blue", bg = "bg_highlight" },
 }
 
 M.build_statuslines = function()
