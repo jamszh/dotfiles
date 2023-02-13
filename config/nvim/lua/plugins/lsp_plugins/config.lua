@@ -1,7 +1,7 @@
 local lsp = require("lib.lsp")
 
 local default_server_list = {
-  sumneko_lua = {
+  lua_ls = {
     settings = {
       Lua = {
         completion = {
