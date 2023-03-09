@@ -4,12 +4,17 @@ local plugin = {
   "NvChad/nvterm",
   lazy = false,
   config = function()
-    require("nvterm").setup()
+    require("nvterm").setup({
+      behavior = {
+        auto_insert = false,
+      }
+    })
 
     local nvterm = require("nvterm.terminal")
+    local toggle_modes = { 'n', 't' }
     local mappings = {
-      { 'n', '<leader>th', function() nvterm.new "horizontal" end },
-      { 'n', '<leader>tv', function() nvterm.new "vertical" end },
+      { toggle_modes, '<leader>th', function() nvterm.toggle('horizontal') end },
+      { toggle_modes, '<leader>tv', function() nvterm.toggle('vertical') end },
       { 't', '<C-x>', '<C-\\><C-N>' },
     }
 
