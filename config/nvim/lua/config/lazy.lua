@@ -16,7 +16,10 @@ require("config.options")
 
 require("lazy").setup("plugins", {
   defaults = { lazy = true },
-  checker = { enabled = true },
+  checker = {
+    enabled = false,
+    notify = true
+  },
   performance = {
     rtp = {
       disabled_plugins = {
