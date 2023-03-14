@@ -2,7 +2,10 @@
 
 I use this for both MacOS and Windows. 
 
+My DEV env [blogpost](https://blog-snowy-xi.vercel.app/blog/my-dev-env)
+
 Always a **WIP**
+
 
 </br>
 
