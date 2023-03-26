@@ -10,19 +10,11 @@ local plugin = {
     {
       "<leader>fe",
       function()
-          require("neo-tree.command").execute({ toggle = true, dir = require("lib.path").get_root() })
+          require("neo-tree.command").execute({ toggle = true, dir = require("lib.path").get_root(), reveal=true })
       end,
-      desc = "Explorer NeoTree (root dir)",
+      desc = "Explorer NeoTree (reveal || root dir)",
     },
-    {
-      "<leader>fE",
-      function()
-          require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
-      end,
-      desc = "Explorer NeoTree (cwd)",
-    },
-    { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
-    { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
+    { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (reveal || root dir)", remap = true },
   }
 }
 
