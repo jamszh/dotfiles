@@ -14,10 +14,17 @@ local default_server_list = {
 
 local config = {
   "neovim/nvim-lspconfig",
-  event = "BufReadPre",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "folke/neoconf.nvim",
-    "folke/neodev.nvim",
+    {
+      "folke/neoconf.nvim",
+      cmd = "Neoconf",
+      opts = {
+        import = { vscode = false }
+      },
+      config = true
+    },
+    { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     {
