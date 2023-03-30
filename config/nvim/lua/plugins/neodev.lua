@@ -1,9 +1,3 @@
-local neoconf = {
-  "folke/neoconf.nvim",
-  cmd = "Neoconf",
-  config = true,
-}
-
 local neodev = {
   "folke/neodev.nvim",
   opts = {
@@ -13,4 +7,4 @@ local neodev = {
   },
 }
 
-return { neoconf, neodev }
+return { neodev }

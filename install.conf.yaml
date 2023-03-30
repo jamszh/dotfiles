@@ -12,7 +12,6 @@
     ~/.config/lazygit/config.yaml:
       force: true
       path: config/lazygit/config.yaml
-
     ~/.zsh/functions: config/zsh/functions 
     ~/.zsh/aliases: config/zsh/aliases
     ~/.zsh/bindings: config/zsh/bindings
