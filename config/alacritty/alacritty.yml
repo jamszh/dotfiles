@@ -1,7 +1,7 @@
 font:
  normal:
-   family: Iosevka Nerd Font Mono
-   style: Extralight
+   family: IosevkaTerm Nerd Font Mono
+   style: ExtraLight
  bold:
    family: Iosevka Nerd Font Mono
    style: Light
