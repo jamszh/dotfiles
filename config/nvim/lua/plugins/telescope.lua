@@ -25,8 +25,8 @@ local keys = {
   { "<leader><space>", grep_wrap("files"), desc = "Find Files (root dir)" },
   -- find
   { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-  { "<leader>ff", grep_wrap("files"), desc = "Find Files (root dir)" },
-  { "<leader>fF", grep_wrap("files", { cwd = false }), desc = "Find Files (cwd)" },
+  { "<leader>fF", grep_wrap("files"), desc = "Find Files (cwd)" },
+  { "<leader>ff", grep_wrap("files", { cwd = false }), desc = "Find Files (root dir)" },
   { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
   -- git
   { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
