@@ -13,6 +13,7 @@ local installed_lsp_list = {
   "typescript-language-server",
   "flake8",
   "json-lsp",
+  "texlab",
 }
 
 local plugin = {

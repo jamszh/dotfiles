@@ -20,6 +20,7 @@ local installed_grammar_list = {
   "regex",
   "vim",
   "yaml",
+  "latex",
 }
 
 local plugin = {
