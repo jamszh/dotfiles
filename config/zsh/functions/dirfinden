@@ -1,7 +1,7 @@
 # Directory FZF Navigator
 usage() { echo "Usage: dirfinde [-e echo] dirA dirB ..."; return }
 
-dirfinde () {
+dirfinden () {
   local opt
   local OPTIND
   while getopts "he" opt; do
@@ -41,4 +41,4 @@ dirfinde () {
   cd $selection
 }
 
-dirfinde "$@"
+dirfinden "$@"

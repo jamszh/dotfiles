@@ -10,11 +10,16 @@ local plugin = {
     {
       "<leader>fe",
       function()
-          require("neo-tree.command").execute({ toggle = true, dir = require("lib.path").get_root(), reveal=true })
+          require("neo-tree.command").execute({ toggle = true, reveal=true })
       end,
       desc = "Explorer NeoTree (reveal || root dir)",
     },
     { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (reveal || root dir)", remap = true },
+  },
+  opts = {
+    buffers = {
+      follow_current_file = false,
+    }
   }
 }
 

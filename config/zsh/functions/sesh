@@ -9,7 +9,8 @@ init () {
 }
 
 sesh () {
-  selection=$(dirfinde -e $ZSH_WORK_DIRS)
+  parts=(${(s/:/)ZSH_WORK_DIRS})
+  selection=$(dirfinden -e $parts)
 
   if [[ -z "${selection// }" ]]; then
     return 0
