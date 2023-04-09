@@ -3,7 +3,7 @@
 [ -f ~/.zsh/tokens ] && source ~/.zsh/tokens
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# UI theme
+# UI themes
 [ -f ~/.zsh/themes/p10k.zsh ] && source ~/.zsh/themes/p10k.zsh
 [ -f ~/.zsh/themes/p10k.zsh ] && source ~/themes/powerlevel10k/powerlevel10k.zsh-theme
 

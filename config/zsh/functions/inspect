@@ -1,13 +1,41 @@
 # Inspect 
+usage() { echo "Usage: inspect [dir|file]"; return }
+
+padded_string="%-30s%s\n"
 
 inspect () {
-  if [ -d $1 ]; then
-    echo "Directory TODO"
+  if [[ $# -ne 1 ]]; then
+    usage
+    return 1
+  fi
+
+  item=$1
+
+  if [ -d $item ]; then
+    parts=$(echo $(du -sh --time $item))
+
+    size=$(echo $parts | cut -d ' ' -f 1)
+    printf $padded_string "size:~" "~$size" | tr ' ~' ' '
+
+    datetime=$(echo $parts | cut -d ' ' -f 2,3)
+    printf $padded_string "last modified:~" "~$datetime" | tr ' ~' ' '
+
+    if [ -d "$item/.git" ]; then
+      echo "\n"
+      git_url=$(git -C $item remote get-url origin)
+      printf $padded_string  "git:~" "~$git_url" | tr ' ~' ' '
+      git -C $item show --summary
+    fi
+
     return 0
   fi
 
-  if [ -f $1 ]; then
+  if [ -f $item ]; then
     echo "File TODO"
     return 0
   fi
 }
+
+inspect "$@"
+
+# vim: ft=zsh
