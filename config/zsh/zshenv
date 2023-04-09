@@ -2,6 +2,8 @@
 export PATH=$PATH:/usr/local/go/bin
 export NVM_DIR="$HOME/.nvm"
 
-# Required for FZF
+# Load functions
 fpath=(~/.zsh/functions $fpath)
-autoload ${fpath[1]}/*(:t)
+
+# Required for FZF
+autoload -Uz ${fpath[1]}/*(:t)

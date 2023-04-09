@@ -33,3 +33,5 @@ sesh () {
 }
 
 sesh "$@"
+
+# vim: ft=zsh

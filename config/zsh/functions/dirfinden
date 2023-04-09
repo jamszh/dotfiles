@@ -26,12 +26,15 @@ dirfinden () {
     return 1
   fi
 
-  local selection=$(find $@ -mindepth 1 -maxdepth 1 -type d | \
-    fzf --height 40% \
-        --delimiter / --with-nth -1 \
-        --border \
-        --reverse \
-        --preview 'inspect {}')
+  local selection=$(
+    find $@ -mindepth 1 -maxdepth 1 -type d | \
+      fzf --height 30% \
+          --delimiter / --with-nth -1 \
+          --reverse \
+          --header "Initialise TMUX Project session" \
+          --preview "inspect {}" \
+          --preview-label "[ Inspect ]" \
+    )
 
   if [[ $e ]]; then
     echo $selection
@@ -42,3 +45,5 @@ dirfinden () {
 }
 
 dirfinden "$@"
+
+# vim: ft=zsh

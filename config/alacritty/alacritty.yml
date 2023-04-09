@@ -9,9 +9,3 @@ font:
    family: Iosevka Nerd Font Mono
    style: Light Italic
  size: 16
-
-window:
-  padding:
-    x: 4
-    y: 4
-  dynamic_padding: true
