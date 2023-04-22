@@ -31,7 +31,7 @@ dirfinden () {
       fzf --height 30% \
           --delimiter / --with-nth -1 \
           --reverse \
-          --header "Initialise TMUX Project session" \
+          --header "Directories" \
           --preview "inspect {}" \
           --preview-label "[ Inspect ]" \
     )
