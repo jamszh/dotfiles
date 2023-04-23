@@ -35,6 +35,17 @@ local mode_indicator = {
   },
 }
 
+-- Terminal
+local terminal_name = {
+    -- we could add a condition to check that buftype == 'terminal'
+    -- or we could do that later (see #conditional-statuslines below)
+    provider = function()
+        local tname, _ = vim.api.nvim_buf_get_name(0):gsub(".*:", "")
+        return " " .. tname
+    end,
+    hl = { fg = "blue", bold = true },
+}
+
 -- Files
 local file_name_block = {
   init = function(self)
@@ -93,6 +104,17 @@ local file_name_modifier = {
   end,
 }
 
+local file_type = function()
+  local utils = require("heirline.utils")
+  return {
+    provider = function()
+      return string.upper(vim.bo.filetype)
+    end,
+    hl = { fg = utils.get_highlight("Type").fg, bold = true },
+  }
+end
+
+-- Blocks
 M.build_file_block = function()
   local utils = require("heirline.utils")
   local result = utils.insert(file_name_block,
@@ -103,6 +125,20 @@ M.build_file_block = function()
     space
   )
   return result
+end
+
+M.build_terminal_block = function()
+  local utils = require("heirline.utils")
+  local conditions = require("heirline.conditions")
+  local block = {
+    condition = function ()
+      return conditions.buffer_matches({ buftype = { "terminal" } })
+    end,
+    utils.surround({ "", "" }, utils.get_highlight("DiffDelete").bg, {
+      terminal_name,
+    }),
+  }
+  return utils.insert(align, block)
 end
 
 -- Ruler
