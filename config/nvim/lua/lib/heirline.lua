@@ -107,6 +107,7 @@ local file_name_modifier = {
 -- Blocks
 M.build_file_block = function()
   local utils = require("heirline.utils")
+  local conditions = require("heirline.conditions")
   local result = utils.insert(file_name_block,
     align,
     file_icon,
@@ -114,21 +115,29 @@ M.build_file_block = function()
     file_flags,
     space
   )
-  return result
+  return {
+    condition = function ()
+      return conditions.buffer_matches({ buftype = { "" } })
+    end,
+    result
+  }
 end
 
 M.build_terminal_block = function()
   local utils = require("heirline.utils")
   local conditions = require("heirline.conditions")
   local block = {
-    condition = function ()
-      return conditions.buffer_matches({ buftype = { "terminal" } })
-    end,
     utils.surround({ "", "" }, utils.get_highlight("DiffDelete").bg, {
       terminal_name,
     }),
   }
-  return utils.insert(align, block)
+  local result = utils.insert(align, block)
+  return {
+    condition = function ()
+      return conditions.buffer_matches({ buftype = { "terminal" } })
+    end,
+    result
+  }
 end
 
 -- Ruler
