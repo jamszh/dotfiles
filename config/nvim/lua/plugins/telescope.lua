@@ -73,34 +73,38 @@ local options = {
   initial_mode = "insert",
   selection_strategy = "reset",
   sorting_strategy = "ascending",
-  layout_strategy = "horizontal",
+  layout_strategy = "vertical",
   layout_config = {
     horizontal = {
       prompt_position = "top",
       preview_width = 0.55,
       results_width = 0.8,
+      preview_cutoff = 120,
+      width = 0.75,
+      height = 0.50,
     },
     vertical = {
+      prompt_position = "bottom",
+      preview_height = 0.7,
       mirror = false,
+      preview_cutoff = 0,
+      width = 0.5,
+      height = 0.7,
     },
-    width = 0.87,
-    height = 0.80,
-    preview_cutoff = 120,
   },
   file_ignore_patterns = { "node_modules" },
   path_display = { "truncate" },
   winblend = 0,
-  border = {},
-  borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+  border = true,
   color_devicons = true,
-  set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+  set_env = { ["COLORTERM"] = "truecolor" },
   mappings = {
     n = {
-      ["q"] = function(...)
+      ["q"] = function()
         return require("telescope.actions").close
       end
     }
-  },
+  }
 }
 
 local config = {
@@ -108,11 +112,12 @@ local config = {
   cmd = "Telescope",
   keys = keys,
   dependencies = {
-    "nvim-lua/plenary.nvim"
+    "nvim-lua/plenary.nvim",
+    "catppuccin/nvim",
   },
   opts = {
     defaults = options,
-  }
+  },
 }
 
 return { config }
