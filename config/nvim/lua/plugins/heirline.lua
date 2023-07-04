@@ -23,7 +23,7 @@ local plugin = {
         heirline.build_statuslines()
       },
       winbar = build_winbar_blocks(),
-      tabline = {},
+      tabline = heirline.build_tabline(),
       status_column = {},
       opts = {
         disable_winbar_cb = function (args)
