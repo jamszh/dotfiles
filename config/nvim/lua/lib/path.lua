@@ -43,4 +43,10 @@ function M.get_root()
   return root
 end
 
+-- Copy relative path of open buffer to clipboard
+function M.copy_path()
+  vim.cmd.CopyRelPath()
+  vim.notify("Relatve path copied")
+end
+
 return M
