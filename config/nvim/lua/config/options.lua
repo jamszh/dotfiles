@@ -15,6 +15,9 @@ opt.relativenumber = true
 opt.termguicolors = true
 opt.clipboard = "unnamedplus"
 
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
+
 if vim.fn.has("wsl") == 1 then
   vim.api.nvim_exec([[
     let g:clipboard = {
@@ -33,5 +36,3 @@ if vim.fn.has("wsl") == 1 then
   )
 end
 
-vim.g.vimtex_view_method = 'zathura'
-vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'

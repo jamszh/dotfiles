@@ -22,8 +22,10 @@ function M.get_root()
       end, workspace) or client.config.root_dir and { client.config.root_dir } or {}
       for _, p in ipairs(paths) do
         local r = vim.loop.fs_realpath(p)
-        if path:find(r, 1, true) then
-          roots[#roots + 1] = r
+        if (r) then
+          if path:find(r, 1, true) then
+            roots[#roots + 1] = r
+          end
         end
       end
     end
@@ -41,6 +43,12 @@ function M.get_root()
   end
   ---@cast root string
   return root
+end
+
+-- Copy relative path of open buffer to clipboard
+function M.copy_path()
+  vim.cmd.CopyRelPath()
+  vim.notify("Relatve path copied")
 end
 
 return M
