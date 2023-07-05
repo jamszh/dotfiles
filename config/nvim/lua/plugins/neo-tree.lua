@@ -39,6 +39,9 @@ local plugin = {
     close_if_last_window = true,
     filesystem = {
       follow_current_file = true,
+    },
+    source_selector = {
+      winbar = true
     }
   },
   config = function (_, opts)
