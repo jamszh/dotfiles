@@ -1,0 +1,12 @@
+{
+    "workspace.library": [
+        "/Users/bytedance/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+        "/usr/local/share/nvim/runtime/lua",
+        "/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig/lua",
+        "/Users/bytedance/.local/share/nvim/lazy/neoconf.nvim/lua",
+        "/Users/bytedance/.local/share/nvim/lazy/neoconf.nvim/types",
+        "/Users/bytedance/.local/share/nvim/lazy/neoconf.nvim/types/lua",
+        "/Users/bytedance/personal/dotfiles/config/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}

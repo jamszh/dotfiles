@@ -1,4 +1,4 @@
-. "$HOME/.cargo/env"
+[ -f ~/.cargo/env ] && . ~/.cargo/env
 export PATH=$PATH:/usr/local/go/bin
 export NVM_DIR="$HOME/.nvm"
 
