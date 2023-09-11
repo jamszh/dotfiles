@@ -3,7 +3,7 @@ local plugin = {
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     on_attach = function(buffer)
-      gs = package.loaded.gitsigns
+      local gs = package.loaded.gitsigns
 
       local function map(mode, l, r, desc)
         vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
