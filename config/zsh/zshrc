@@ -5,10 +5,12 @@
 
 # UI themes
 [ -f ~/.zsh/themes/p10k.zsh ] && source ~/.zsh/themes/p10k.zsh
-[ -f ~/.zsh/themes/p10k.zsh ] && source ~/themes/powerlevel10k/powerlevel10k.zsh-theme
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Work directories --- Used by utility functions
 export ZSH_WORK_DIRS=~/workspace:~/personal
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+export PATH="/usr/local/bin:/opt/homebrew/opt/curl/bin:$PATH"

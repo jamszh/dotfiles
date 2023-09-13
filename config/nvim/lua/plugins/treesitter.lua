@@ -21,6 +21,7 @@ local installed_grammar_list = {
   "vim",
   "yaml",
   "latex",
+  "help",
 }
 
 local plugin = {
@@ -33,6 +34,7 @@ local plugin = {
     indent = { enable = true },
     context_commentstring = { enable = true, enable_autocmd = false },
     ensure_installed = installed_grammar_list,
+    ignore_install = { 'help' }
   },
   config = function(_, opts)
     require("nvim-treesitter.configs").setup(opts)
