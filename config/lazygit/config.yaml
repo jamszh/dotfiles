@@ -1,2 +1,5 @@
 os:
-  editCommand: 'vi'
+  edit: 'nvim {{filename}}'
+  editAtLine: 'nvim --line={{line}} {{filename}}'
+services:
+  code.byted.org: 'gitlab:code.byted.org'
