@@ -22,6 +22,7 @@ local installed_grammar_list = {
   "yaml",
   "latex",
   "help",
+  "thrift",
 }
 
 local plugin = {

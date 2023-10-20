@@ -14,3 +14,4 @@ export NVM_DIR="$HOME/.nvm"
 export ZSH_WORK_DIRS=~/workspace:~/personal
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/local/bin:/opt/homebrew/opt/curl/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"

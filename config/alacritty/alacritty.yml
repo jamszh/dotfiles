@@ -9,3 +9,7 @@ font:
    family: Iosevka Nerd Font Mono
    style: Light Italic
  size: 16
+
+key_bindings:
+  - { key: Right, mods: Alt, chars: "\x1BF" }
+  - { key: Left,  mods: Alt, chars: "\x1BB" }
