@@ -12,7 +12,7 @@ inspect () {
   item=$1
 
   if [ -d $item ]; then
-    parts=$(echo $(du -sh --time $item))
+    parts=$(echo $(du -sh $item))
 
     size=$(echo $parts | cut -d ' ' -f 1)
     printf $padded_string "size:~" "~$size" | tr ' ~' ' '
