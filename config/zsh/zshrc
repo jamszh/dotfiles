@@ -11,7 +11,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Work directories --- Used by utility functions
-export ZSH_WORK_DIRS=~/workspace:~/personal
+export ZSH_WORK_DIRS=~/workspace:~/personal:~/workspace/tiktok_web_monorepo/packages/apps:~/go/src/code.byted.org/jameszhang:~/workspace/tiktok_web_monorepo/packages/libs
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/local/bin:/opt/homebrew/opt/curl/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
