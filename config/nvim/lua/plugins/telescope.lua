@@ -73,7 +73,7 @@ local options = {
   initial_mode = "insert",
   selection_strategy = "reset",
   sorting_strategy = "ascending",
-  layout_strategy = "horizontal",
+  layout_strategy = "vertical",
   layout_config = {
     horizontal = {
       prompt_position = "top",
@@ -85,9 +85,9 @@ local options = {
     },
     vertical = {
       prompt_position = "bottom",
-      preview_height = 0.7,
+      preview_height = 0.6,
       mirror = false,
-      preview_cutoff = 0,
+      preview_cutoff = 40,
       width = 0.5,
       height = 0.7,
     },
