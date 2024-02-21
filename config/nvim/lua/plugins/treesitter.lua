@@ -1,5 +1,6 @@
 local installed_grammar_list = {
   "bash",
+  "css",
   "dockerfile",
   "go",
   "help",
@@ -28,7 +29,7 @@ local installed_grammar_list = {
 local plugin = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  event = "BufReadPost",
+  lazy = false,
   opts = {
     sync_install = false,
     highlight = { enable = true },

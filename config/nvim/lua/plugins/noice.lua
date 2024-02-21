@@ -36,15 +36,4 @@ local noice = {
   },
 }
 
-local lsp_notify = {
-  'mrded/nvim-lsp-notify',
-  event = "BufReadPre",
-  dependencies = {
-    { "rcarriga/nvim-notify" },
-  },
-  config = function()
-    require('lsp-notify').setup({ notify = require('notify') })
-  end
-}
-
-return { noice, lsp_notify }
+return { noice }
