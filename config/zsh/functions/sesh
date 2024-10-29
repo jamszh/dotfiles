@@ -2,9 +2,9 @@
 init () {
   if command -v lazygit &> /dev/null; then
     tmux new-session -ds $session_title -c $selection "lazygit"
-    tmux new-window -t $session_title -c $selection
+    tmux new-window -t $session_title -c $selection "nvim"
   else
-    tmux new-session -ds $session_title -c $selection
+    tmux new-session -ds $session_title -c $selection "nvim"
   fi
 }
 
