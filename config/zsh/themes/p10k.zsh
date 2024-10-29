@@ -51,7 +51,7 @@
     # =========================[ Line #1 ]=========================
     # context                 # user@host
     dir                       # current directory
-    vcs                       # git status
+    # vcs                       # git status
     # command_execution_time  # previous command duration
     # =========================[ Line #2 ]=========================
     newline                   # \n
@@ -197,3 +197,5 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+typeset -g POWERLEVEL9K_DISABLE_GITSTATUS=true

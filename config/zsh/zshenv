@@ -1,5 +1,5 @@
 [ -f ~/.cargo/env ] && . ~/.cargo/env
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export NVM_DIR="$HOME/.nvm"
 
 # Load functions
