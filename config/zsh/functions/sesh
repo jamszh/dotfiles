@@ -6,6 +6,7 @@ init () {
     else
       tmux new-session -ds $session_title -c $selection "lazygit"
     fi
+    tmux new-window -t $session_title -c $selection
     tmux new-window -t $session_title -c $selection "nvim"
   else
     tmux new-session -ds $session_title -c $selection "nvim"

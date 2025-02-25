@@ -1,0 +1,18 @@
+# Inspect 
+usage() { echo "Usage: ffmpeg_compress [path]"; return }
+
+ffmpeg_compress () {
+  new_path="${1}/compressed"
+  if [[ ! -d $new_path ]]; then
+    mkdir $new_path
+  fi
+
+  find $1 -name '*.mp4' \
+    -maxdepth 1 \
+    -type f \
+    -exec sh -c 'ffmpeg -i {} -c:v libx265 -vtag hvc1 $(dirname {})/compressed/$(basename {})' ';'
+}
+
+ffmpeg_compress "$@"
+
+# vim: ft=zsh
