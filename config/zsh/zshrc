@@ -11,7 +11,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Work directories --- Used by utility functions
-export ZSH_WORK_DIRS=~/workspace:~/personal:~/workspace/tiktok_web_monorepo/packages/apps:~/go/src/code.byted.org/jameszhang:~/workspace/tiktok_web_monorepo/packages/libs:~/workspace/tiktok_web_monorepo/packages/apps/tiktok_live_lynx/revenue:~/workspace/tiktok_web_monorepo/packages/libs/tiktok_live_lynx/sab
+export ZSH_WORK_DIRS=~/workspace:~/personal:~/workspace/live_revenue_monorepo/packages/apps:~/go/src/code.byted.org/jameszhang:~/workspace/live_revenue_monorepo/packages/libs:~/workspace/live_revenue_monorepo/packages/apps/tiktok_live_lynx/revenue:~/workspace/live_revenue_monorepo/packages/libs/tiktok_live_lynx/sab:~/workspace/live_revenue_monorepo/packages/apps/tiktok_live_h5/revenue:~/workspace/live_revenue_monorepo/subspaces
+
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/local/bin:/opt/homebrew/opt/curl/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
+
+
+
+# --- BEGIN FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
+# https://bytedance.sg.larkoffice.com/docx/SurId67UBoZxHwxe07Clr5Ufgog
+
+export FEDERATED_REPO_GIT_TELEMETRY_VERSION=1.3.0
+export GIT_TRACE2_EVENT="$HOME/.trace2/event"
+export GIT_TRACE2_EVENT_BRIEF=true
+export GIT_TRACE2_MAX_FILES=100000
+
+# --- END FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
+
+

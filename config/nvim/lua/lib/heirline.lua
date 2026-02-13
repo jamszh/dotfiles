@@ -139,8 +139,8 @@ end
 
 -- Blocks
 M.build_file_block = function()
-  local utils = require("heirline.utils")
   local conditions = require("heirline.conditions")
+  local utils = require("heirline.utils")
   local result = utils.insert(file_name_block,
     align,
     file_icon,
@@ -157,8 +157,8 @@ M.build_file_block = function()
 end
 
 M.build_terminal_block = function()
-  local utils = require("heirline.utils")
   local conditions = require("heirline.conditions")
+  local utils = require("heirline.utils")
   local block = {
     utils.surround({ "", "" }, utils.get_highlight("DiffDelete").bg, {
       terminal_name,
@@ -194,9 +194,31 @@ local scroll_bar = {
   end,
 }
 
+M.build_macro_rec = function()
+  local utils = require("heirline.utils")
+  local result = {
+    condition = function()
+        return vim.fn.reg_recording() ~= "" and vim.o.cmdheight == 0
+    end,
+    provider = "  ",
+    hl = { fg = "orange", bold = true },
+    utils.surround({ "[", "]" }, nil, {
+        provider = function()
+            return vim.fn.reg_recording()
+        end,
+        hl = { fg = "green", bold = true },
+    }),
+    update = {
+      "RecordingEnter",
+      "RecordingLeave",
+    }
+  }
+  return result
+end
+
 M.build_statuslines = function()
   local conditions = require("heirline.conditions")
-  local DEFAULT_STATUS_LINE = { space, mode_indicator, align, ruler, space, scroll_bar }
+  local DEFAULT_STATUS_LINE = { space, mode_indicator, M.build_macro_rec(), align, ruler, space, scroll_bar }
 
   local result = {
     hl = function()
