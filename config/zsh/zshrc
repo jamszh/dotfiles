@@ -11,7 +11,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Work directories --- Used by utility functions
-export ZSH_WORK_DIRS=~/workspace:~/personal:~/workspace/live_revenue_monorepo/packages/apps:~/go/src/code.byted.org/jameszhang:~/workspace/live_revenue_monorepo/packages/libs:~/workspace/live_revenue_monorepo/packages/apps/tiktok_live_lynx/revenue:~/workspace/live_revenue_monorepo/packages/libs/tiktok_live_lynx/sab:~/workspace/live_revenue_monorepo/packages/apps/tiktok_live_h5/revenue:~/workspace/live_revenue_monorepo/subspaces
+export ZSH_WORK_DIRS=~/workspace:~/personal:~/workspace/live_revenue_monorepo/packages/apps:~/go/src/code.byted.org/jameszhang:~/workspace/live_revenue_monorepo/packages/libs:~/workspace/live_revenue_monorepo/packages/apps/tiktok_live_lynx/revenue:~/workspace/live_revenue_monorepo/packages/libs/tiktok_live_lynx/sab:~/workspace/live_revenue_monorepo/packages/apps/tiktok_live_h5/revenue:~/workspace/live_revenue_monorepo/subspaces:~/workspace/live_revenue_monorepo/subspaces/gtm
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/usr/local/bin:/opt/homebrew/opt/curl/bin:$PATH"
@@ -30,3 +30,4 @@ export GIT_TRACE2_MAX_FILES=100000
 # --- END FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
 
 
+export PATH="$HOME/.local/bin:$PATH"
