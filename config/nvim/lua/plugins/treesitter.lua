@@ -30,7 +30,7 @@ local installed_grammar_list = {
 local plugin = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  lazy = false,
+  event = { "BufReadPre", "BufNewFile" }, -- load when opening a file
   opts = {
     sync_install = false,
     highlight = {
@@ -52,7 +52,7 @@ local plugin = {
     ignore_install = { 'help' }
   },
   config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
+    require("nvim-treesitter.config").setup(opts)
   end
 }
 
