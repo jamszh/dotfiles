@@ -2,3 +2,4 @@ config/nvim/plugin/packer_compiled.lua
 nvim/.config/*
 !nvim/.config/nvim
 config/nvim/.luarc.json
+.DS_Store

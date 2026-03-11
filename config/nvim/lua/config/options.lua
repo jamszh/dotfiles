@@ -36,3 +36,14 @@ if vim.fn.has("wsl") == 1 then
   )
 end
 
+vim.filetype.add({
+  extension = {
+    zsh = "bash",
+  },
+  filename = {
+    [".zshrc"] = "bash",
+    [".zshenv"] = "bash",
+    [".zprofile"] = "bash",
+    [".zsh"] = "bash"
+  },
+})

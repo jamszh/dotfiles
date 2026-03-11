@@ -1,0 +1,30 @@
+[font]
+size = 16
+
+[font.normal]
+family = "Iosevka Nerd Font Mono"
+style = "ExtraLight"
+
+[font.bold]
+family = "Iosevka Nerd Font Mono"
+style = "Light"
+
+[font.italic]
+family = "Iosevka Nerd Font Mono"
+style = "Light Italic"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+chars = "\u001bF"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+chars = "\u001bB"
+
+[window]
+option_as_alt = "Both"
+
+[terminal.shell]
+program = "/bin/zsh"
