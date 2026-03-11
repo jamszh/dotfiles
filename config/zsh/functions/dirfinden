@@ -46,4 +46,4 @@ dirfinden () {
 
 dirfinden "$@"
 
-# vim: ft=zsh
+# vim: ft=bash

@@ -1,9 +1,9 @@
 local plugin = {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   event = "BufReadPre",
   dependencies = { "mason.nvim" },
   opts = function()
-    local nls = require("null-ls")
+    local nls = require("none-ls")
     return {
       sources = {
         nls.builtins.formatting.stylua,
