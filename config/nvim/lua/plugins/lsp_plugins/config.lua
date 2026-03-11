@@ -91,8 +91,10 @@ local config = {
       end
     end
 
-    mason_lsp_config.setup({ ensure_installed = ensure_installed })
-    mason_lsp_config.setup_handlers({ setup })
+    mason_lsp_config.setup({
+      ensure_installed = ensure_installed,
+      handlers = { setup }
+    })
   end,
 }
 
