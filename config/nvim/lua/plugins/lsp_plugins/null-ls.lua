@@ -3,11 +3,11 @@ local plugin = {
   event = "BufReadPre",
   dependencies = { "mason.nvim" },
   opts = function()
-    local nls = require("none-ls")
+    local nls = require("null-ls")
     return {
       sources = {
         nls.builtins.formatting.stylua,
-        nls.builtins.diagnostics.flake8
+        -- nls.builtins.diagnostics.flake8,
       },
     }
   end,

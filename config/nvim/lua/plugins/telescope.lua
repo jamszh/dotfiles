@@ -67,6 +67,9 @@ local options = {
     "--column",
     "--smart-case",
   },
+  preview = {
+    treesitter = true,
+  },
   prompt_prefix = "   ",
   selection_caret = "  ",
   entry_prefix = "  ",

@@ -9,7 +9,28 @@ local default_server_list = {
         }
       }
     }
-  }
+  },
+  tsserver = { enabled = false },
+  vtsls = { enabled = false },
+  tsgo = {
+    cmd = { "tsgo", "--lsp", "--stdio" },
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+    },
+    root_markers = {
+      "tsconfig.json",
+      "jsconfig.json",
+      "package.json",
+      ".git",
+      "tsconfig.base.json",
+    },
+    enabled = true,
+  },
 }
 
 local config = {
@@ -33,17 +54,12 @@ local config = {
         return require("lib.lazy").has("nvim-cmp")
       end,
     },
-    "jose-elias-alvarez/typescript.nvim",
   },
   opts = {
     servers = default_server_list,
-    setup = {
-      tsserver = function(_, opts)
-        require("typescript").setup({ server = opts })
-        return true
-      end,
-    },
+    setup = {},
   },
+
   config = function(_, opts)
     local servers = opts.servers
 
@@ -83,11 +99,16 @@ local config = {
     for server, server_opts in pairs(servers) do
       if server_opts then
         server_opts = server_opts == true and {} or server_opts
+        if server_opts.enabled == false then
+          -- skip disabled servers entirely
+          goto continue
+        end
         if server_opts.mason == false or not vim.tbl_contains(available, server) then
           setup(server)
         else
           ensure_installed[#ensure_installed + 1] = server
         end
+        ::continue::
       end
     end
 

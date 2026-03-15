@@ -4,3 +4,5 @@ os:
 services:
   code.byted.org: 'gitlab:code.byted.org'
 confirmOnQuit: true
+git:
+  autoFetch: false

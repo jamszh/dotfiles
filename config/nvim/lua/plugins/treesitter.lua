@@ -30,7 +30,7 @@ local installed_grammar_list = {
 local plugin = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  event = { "BufReadPre", "BufNewFile" }, -- load when opening a file
+  lazy = false,
   opts = {
     sync_install = false,
     highlight = {

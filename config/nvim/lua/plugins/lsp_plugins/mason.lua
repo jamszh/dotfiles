@@ -10,7 +10,6 @@ local installed_lsp_list = {
   "svelte-language-server",
   "rust-analyzer",
   "stylua",
-  "typescript-language-server",
   "flake8",
   "json-lsp",
   "texlab",
