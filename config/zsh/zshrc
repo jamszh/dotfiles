@@ -18,10 +18,11 @@ export PATH="/usr/local/bin:/opt/homebrew/opt/curl/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 
+
 # --- BEGIN FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
 # https://bytedance.sg.larkoffice.com/docx/SurId67UBoZxHwxe07Clr5Ufgog
 
-export FEDERATED_REPO_GIT_TELEMETRY_VERSION=1.3.0
+export FEDERATED_REPO_GIT_TELEMETRY_VERSION=2.1.0
 export GIT_TRACE2_EVENT="$HOME/.trace2/event"
 export GIT_TRACE2_EVENT_BRIEF=true
 export GIT_TRACE2_MAX_FILES=100000
@@ -29,5 +30,14 @@ export GIT_TRACE2_MAX_FILES=100000
 # --- END FEDERATED REPO GIT TELEMETRY CODE BLOCK ---
 
 
+
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# bun completions
+[ -s "/Users/bytedance/.bun/_bun" ] && source "/Users/bytedance/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export OLLAMA_API_KEY="local"

@@ -95,7 +95,6 @@ local options = {
       height = 0.8,
     },
   },
-  file_ignore_patterns = { "node_modules" },
   path_display = { "truncate" },
   winblend = 0,
   border = true,
@@ -120,6 +119,11 @@ local config = {
   },
   opts = {
     defaults = options,
+    pickers = {
+      find_files = { file_ignore_patterns = { "node_modules" } },
+      git_files = { file_ignore_patterns = { "node_modules" } },
+      live_grep = { file_ignore_patterns = { "node_modules" } },
+    },
   },
 }
 
